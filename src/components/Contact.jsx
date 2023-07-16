@@ -27,7 +27,29 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-
+    e.preventDefault();
+    setLoading(true);
+    
+    emailJs.send(
+      "service_32xkvb7",
+      "template_8sib06j",
+      {
+        from_name: form.name,
+        to_name: "Example Name",
+        from_email: form.email,
+        to_email: "gabrielbourget@gmail.com",
+        message: form.message,
+      },
+      "83k5p680JhN4PdZjy"
+    ).then(() => {
+      setLoading(false);
+      alert("Your message was successfully sent.")
+      setForm({ name: "", email: "", message: "" });
+    }, (error) => {
+      setLoading(false);
+      console.error(error);
+      alert("Something went wrong submitting your message.")
+    });
   };
 
   return (
