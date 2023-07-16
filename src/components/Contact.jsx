@@ -17,9 +17,18 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {};
+  // template_8sib06j
+  // service_32xkvb7
+  // 83k5p680JhN4PdZjy
 
-  const handleSubmit = (e) => {};
+  const handleChange = (e) => {
+    const { target: { name, value }} = e;
+    setForm ({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+
+  };
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-3 overflow-hidden">
